@@ -2,11 +2,13 @@
 
 ## Domain Proyek
 
-Churn pelanggan merujuk pada fenomena di mana pelanggan menghentikan hubungan atau langganan mereka dengan perusahaan atau penyedia layanan. Ini mewakili tingkat di mana pelanggan berhenti menggunakan produk atau layanan perusahaan dalam periode tertentu. Churn adalah metrik penting bagi bisnis karena berdampak langsung pada pendapatan, pertumbuhan, dan retensi pelanggan.
+Churn pelanggan merujuk pada fenomena di mana pelanggan menghentikan hubungan atau langganan mereka dengan perusahaan atau penyedia layanan. Tingkat churn pelanggan berdampak langsung pada pendapatan, pertumbuhan, dan retensi pelanggan perusahaan. Oleh karena itu, memahami dan mengurangi churn pelanggan adalah prioritas utama bagi banyak bisnis
 
-Dalam konteks dataset Churn, label churn menunjukkan apakah pelanggan telah churn atau tidak. Pelanggan yang churn adalah orang yang telah memutuskan untuk menghentikan langganan atau penggunaan layanan perusahaan. Di sisi lain, pelanggan yang tidak churn adalah orang yang terus terlibat dan mempertahankan hubungan mereka dengan perusahaan.
+Misalnya, dalam industri telekomunikasi, pelanggan mungkin memilih untuk berhenti berlangganan jika mereka merasa tidak puas dengan kualitas layanan, menemukan penawaran yang lebih baik dari pesaing, atau merasa bahwa biaya langganan mereka tidak sebanding dengan nilai yang mereka terima[^1^]. Dalam kasus seperti ini, perusahaan dapat kehilangan pendapatan signifikan dan mungkin harus mengeluarkan biaya tambahan untuk memperoleh pelanggan baru.
 
-Memahami churn pelanggan sangat penting bagi bisnis untuk mengidentifikasi pola, faktor, dan indikator yang berkontribusi terhadap attrition pelanggan. Dengan menganalisis perilaku churn dan fitur-fitur yang terkait, perusahaan dapat mengembangkan strategi untuk mempertahankan pelanggan yang ada, meningkatkan kepuasan pelanggan, dan mengurangi turnover pelanggan. Teknik pemodelan prediktif juga dapat diterapkan untuk meramalkan dan secara proaktif menangani churn potensial, memungkinkan perusahaan untuk mengambil langkah-langkah proaktif untuk mempertahankan pelanggan yang berisiko.
+Dengan melakukan analisis prediksi churn, perusahaan dapat mengidentifikasi pelanggan yang berisiko churn dan mengambil tindakan proaktif untuk mempertahankan mereka. Misalnya, mereka mungkin menawarkan diskon atau peningkatan layanan untuk meningkatkan kepuasan pelanggan dan mencegah mereka berhenti berlangganan. Oleh karena itu, analisis prediksi churn adalah alat yang sangat berharga untuk mempertahankan pelanggan dan meningkatkan kinerja bisnis.
+
+[^1^]: [Customer Churn Analysis in the Telecommunication Sector](https://www.sciencedirect.com/science/article/pii/S2666720723001443/pdfft?md5=f34da862b7b8bc3c3a3b9a5b8420c23f&pid=1-s2.0-S2666720723001443-main.pdf)
 
 ## Business Understanding
 
@@ -18,7 +20,7 @@ Memahami churn pelanggan sangat penting bagi bisnis untuk mengidentifikasi pola,
 
 ### Goals
 
-- Membangun model prediktif yang dapat memprediksi churn pelanggan dengan akurasi yang tinggi.
+- Membangun model prediktif yang dapat memprediksi churn pelanggan dengan akurasi di atas 90%.
 - Mengidentifikasi fitur-fitur yang paling berkontribusi terhadap churn pelanggan.
 - Menggunakan model untuk mengidentifikasi pelanggan yang berisiko churn.
 - Mengambil tindakan proaktif berdasarkan prediksi model untuk mempertahankan pelanggan dan mengurangi churn.
@@ -46,6 +48,7 @@ Data yang digunakan pada proyek kali ini adalah data yang diambil dari <a href='
 ## Data Preparation
 
 Pada tahap ini, perlu dilakukan beberapa proses untuk mempersiapkan data sebelum dilakukan pemodelan. Proses-proses tersebut antara lain:
+
 - Melakukan pengecekan terhadap tipe data dari setiap kolom pada dataset. Hal ini dilakukan untuk memastikan bahwa tipe data dari setiap kolom sudah sesuai dengan yang diharapkan.
 - Melakukan pengecekan terhadap missing value pada dataset. Hal ini dilakukan untuk memastikan bahwa tidak ada missing value pada dataset.
 - Melakukan pengecekan terhadap duplikasi data pada dataset. Hal ini dilakukan untuk memastikan bahwa tidak ada duplikasi data pada dataset.
@@ -57,6 +60,7 @@ Pada tahap ini, perlu dilakukan beberapa proses untuk mempersiapkan data sebelum
 - Melakukan split data menjadi data train, test, dan validation. Hal ini dilakukan untuk membagi data menjadi data train, test, dan validation dengan proporsi tertentu sehingga dapat digunakan untuk melatih model, menguji model, dan mengevaluasi model.
 
 ## Modeling
+
 Pada proyek ini, akan digunakan model machine learning tensorflow dengan arsitektur deep learning. Hal ini karena deep learning mampu mempelajari pola yang kompleks dari data dan menghasilkan prediksi yang akurat. Model ini terdiri dari 1024 neuron, layer kedua terdiri dari 512 neuron, dan layer terakhir terdiri dari 1 neuron. Model ini menggunakan fungsi aktivasi relu pada layer pertama dan kedua, karena relu merupakan fungsi aktivasi yang paling umum digunakan pada hidden layer. Sedangkan pada layer terakhir menggunakan fungsi aktivasi sigmoid, karena sigmoid merupakan fungsi aktivasi yang paling umum digunakan pada output layer untuk klasifikasi biner.
 
 Selanjutnya, model akan di compile dengan optimizer adam, loss function binary crossentropy, dan metrics accuracy. Optimizer adam merupakan optimizer yang paling umum digunakan pada deep learning karena dapat melakukan penyesuaian learning rate secara otomatis. Loss function binary crossentropy merupakan loss function yang paling umum digunakan pada klasifikasi biner. Metrics accuracy digunakan untuk mengukur performa model.
