@@ -26,7 +26,7 @@ Memahami churn pelanggan sangat penting bagi bisnis untuk mengidentifikasi pola,
 
 ## Data Understanding
 
-Data yang digunakan pada proyek kali ini adalah data yang diambil dari <a href='https://www.kaggle.com/datasets/nelgiriyewithana/apple-quality'>Kaggle</a>. Trainning file untuk dataset CHURN berisi kumpulan 440882 record pelanggan beserta fitur dan label churn mereka masing-masing. File ini berfungsi sebagai sumber utama untuk melatih model machine learning untuk memprediksi churn pelanggan. Setiap record dalam file training mewakili pelanggan dan mencakup fitur seperti CustomerID, Age Gender, Tenure, Usage Frequency, Support Calls, Payment Delay, Subscription Type, Contract Length, Total Spend, dan Last Interaction. Label churn menunjukkan apakah pelanggan telah churn (1) atau tidak (0). Dengan memanfaatkan file pelatihan ini, bisnis dapat mengembangkan model prediksi churn yang akurat untuk mengidentifikasi pelanggan yang paling mungkin untuk churn dan mengambil tindakan proaktif untuk mempertahankannya.
+Data yang digunakan pada proyek kali ini adalah data yang diambil dari <a href='https://www.kaggle.com/datasets/nelgiriyewithana/apple-quality' target='_blank'>Kaggle</a>. Trainning file untuk dataset CHURN berisi kumpulan 440882 record pelanggan beserta fitur dan label churn mereka masing-masing. File ini berfungsi sebagai sumber utama untuk melatih model machine learning untuk memprediksi churn pelanggan. Setiap record dalam file training mewakili pelanggan dan mencakup fitur seperti CustomerID, Age Gender, Tenure, Usage Frequency, Support Calls, Payment Delay, Subscription Type, Contract Length, Total Spend, dan Last Interaction. Label churn menunjukkan apakah pelanggan telah churn (1) atau tidak (0). Dengan memanfaatkan file pelatihan ini, bisnis dapat mengembangkan model prediksi churn yang akurat untuk mengidentifikasi pelanggan yang paling mungkin untuk churn dan mengambil tindakan proaktif untuk mempertahankannya.
 
 ### Variabel-variabel pada Customer Churn dataset adalah sebagai berikut:
 
@@ -45,12 +45,16 @@ Data yang digunakan pada proyek kali ini adalah data yang diambil dari <a href='
 
 ## Data Preparation
 
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
+Pada tahap ini, perlu dilakukan beberapa proses untuk mempersiapkan data sebelum dilakukan pemodelan. Proses-proses tersebut antara lain:
+- Melakukan pengecekan terhadap tipe data dari setiap kolom pada dataset. Hal ini dilakukan untuk memastikan bahwa tipe data dari setiap kolom sudah sesuai dengan yang diharapkan.
+- Melakukan pengecekan terhadap missing value pada dataset. Hal ini dilakukan untuk memastikan bahwa tidak ada missing value pada dataset.
+- Melakukan pengecekan terhadap duplikasi data pada dataset. Hal ini dilakukan untuk memastikan bahwa tidak ada duplikasi data pada dataset.
+- Melakukan pengecekan terhadap outlier pada dataset dengan menggunakan describe statistics. Hal ini dilakukan untuk memastikan bahwa tidak ada outlier pada dataset sehingga tidak mempengaruhi hasil dari model machine learning yang akan dibuat.
+- Mengatasi missing value pada dataset. Hal ini dilakukan dengan cara mengisi missing value dengan nilai yang sesuai atau menghapus baris yang memiliki missing value karena jumlah missing value yang sedikit.
+- Melakukan pengecekan terhadap korelasi antar variabel pada dataset. Hal ini dilakukan untuk mengetahui korelasi antar variabel pada dataset sehingga dapat diketahui variabel mana saja yang memiliki korelasi tinggi dengan label churn.
+- Menghapus kolom yang tidak diperlukan dan yang memiliki korelasi sangat rendah dengan label churn. Hal ini dilakukan untuk mempercepat proses pemodelan dan mengurangi kompleksitas model.
+- Melakukan encoding terhadap kolom-kolom kategorikal pada dataset. Hal ini dilakukan untuk mengubah tipe data dari kolom-kolom kategorikal menjadi numerik sehingga dapat digunakan pada model machine learning.
+- Melakukan split data menjadi data train, test, dan validation. Hal ini dilakukan untuk membagi data menjadi data train, test, dan validation dengan proporsi tertentu sehingga dapat digunakan untuk melatih model, menguji model, dan mengevaluasi model.
 
 ## Modeling
 
