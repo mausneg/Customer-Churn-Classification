@@ -24,32 +24,24 @@ Memahami churn pelanggan sangat penting bagi bisnis untuk mengidentifikasi pola,
 - Mengambil tindakan proaktif berdasarkan prediksi model untuk mempertahankan pelanggan dan mengurangi churn.
 - Meningkatkan retensi pelanggan dan, pada akhirnya, pendapatan dan pertumbuhan perusahaan.
 
-Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-
-- Menambahkan bagian “Solution Statement” yang menguraikan cara untuk meraih goals. Bagian ini dibuat dengan ketentuan sebagai berikut:
-
-  ### Solution statements
-
-  - Mengajukan 2 atau lebih solution statement. Misalnya, menggunakan dua atau lebih algoritma untuk mencapai solusi yang diinginkan atau melakukan improvement pada baseline model dengan hyperparameter tuning.
-  - Solusi yang diberikan harus dapat terukur dengan metrik evaluasi.
-
 ## Data Understanding
 
-Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
+Data yang digunakan pada proyek kali ini adalah data yang diambil dari <a href='https://www.kaggle.com/datasets/nelgiriyewithana/apple-quality'>Kaggle</a>. Trainning file untuk dataset CHURN berisi kumpulan 440882 record pelanggan beserta fitur dan label churn mereka masing-masing. File ini berfungsi sebagai sumber utama untuk melatih model machine learning untuk memprediksi churn pelanggan. Setiap record dalam file training mewakili pelanggan dan mencakup fitur seperti CustomerID, Age Gender, Tenure, Usage Frequency, Support Calls, Payment Delay, Subscription Type, Contract Length, Total Spend, dan Last Interaction. Label churn menunjukkan apakah pelanggan telah churn (1) atau tidak (0). Dengan memanfaatkan file pelatihan ini, bisnis dapat mengembangkan model prediksi churn yang akurat untuk mengidentifikasi pelanggan yang paling mungkin untuk churn dan mengambil tindakan proaktif untuk mempertahankannya.
 
-Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:
+### Variabel-variabel pada Customer Churn dataset adalah sebagai berikut:
 
-### Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
-
-- accepts : merupakan jenis pembayaran yang diterima pada restoran tertentu.
-- cuisine : merupakan jenis masakan yang disajikan pada restoran.
-- dst
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
+- `CustomerID`: ID unik untuk setiap pelanggan.
+- `Age`: Usia pelanggan.
+- `Gender`: Jenis kelamin pelanggan.
+- `Tenure`: Masa aktif pelanggan dalam bulan.
+- `Usage Frequency`: Frekuensi penggunaan layanan dalam sebulan.
+- `Support Calls`: Jumlah panggilan dukungan pelanggan.
+- `Payment Delay`: Jumlah hari keterlambatan pembayaran.
+- `Subscription Type`: Tipe langganan pelanggan.
+- `Contract Length`: Durasi kontrak pelanggan dalam bulan.
+- `Total Spend`: Total pengeluaran pelanggan.
+- `Last Interaction`: Waktu interaksi terakhir dengan pelanggan.
+- `Churn`: Label churn pelanggan (1: churn, 0: tidak churn).
 
 ## Data Preparation
 
