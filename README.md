@@ -4,11 +4,11 @@
 
 Churn pelanggan merujuk pada fenomena di mana pelanggan menghentikan hubungan atau langganan mereka dengan perusahaan atau penyedia layanan. Tingkat churn pelanggan berdampak langsung pada pendapatan, pertumbuhan, dan retensi pelanggan perusahaan. Oleh karena itu, memahami dan mengurangi churn pelanggan adalah prioritas utama bagi banyak bisnis
 
-Misalnya, dalam industri telekomunikasi, pelanggan mungkin memilih untuk berhenti berlangganan jika mereka merasa tidak puas dengan kualitas layanan, menemukan penawaran yang lebih baik dari pesaing, atau merasa bahwa biaya langganan mereka tidak sebanding dengan nilai yang mereka terima[^1^]. Dalam kasus seperti ini, perusahaan dapat kehilangan pendapatan signifikan dan mungkin harus mengeluarkan biaya tambahan untuk memperoleh pelanggan baru.
+Misalnya, dalam industri telekomunikasi, pelanggan mungkin memilih untuk berhenti berlangganan jika mereka merasa tidak puas dengan kualitas layanan, menemukan penawaran yang lebih baik dari pesaing, atau merasa bahwa biaya langganan mereka tidak sebanding dengan nilai yang mereka terima. Dalam kasus seperti ini, perusahaan dapat kehilangan pendapatan signifikan dan mungkin harus mengeluarkan biaya tambahan untuk memperoleh pelanggan baru.
 
-Dengan melakukan analisis prediksi churn, perusahaan dapat mengidentifikasi pelanggan yang berisiko churn dan mengambil tindakan proaktif untuk mempertahankan mereka. Misalnya, mereka mungkin menawarkan diskon atau peningkatan layanan untuk meningkatkan kepuasan pelanggan dan mencegah mereka berhenti berlangganan. Oleh karena itu, analisis prediksi churn adalah alat yang sangat berharga untuk mempertahankan pelanggan dan meningkatkan kinerja bisnis.
+Dengan melakukan analisis prediksi churn, perusahaan dapat mengidentifikasi pelanggan yang berisiko churn dan mengambil tindakan proaktif untuk mempertahankan mereka. Misalnya, mereka mungkin menawarkan diskon atau peningkatan layanan untuk meningkatkan kepuasan pelanggan dan mencegah mereka berhenti berlangganan. Oleh karena itu, analisis prediksi churn adalah alat yang sangat berharga untuk mempertahankan pelanggan dan meningkatkan kinerja bisnis [^1^].
 
-[^1^]: [Customer Churn Analysis in the Telecommunication Sector](https://www.sciencedirect.com/science/article/pii/S2666720723001443/pdfft?md5=f34da862b7b8bc3c3a3b9a5b8420c23f&pid=1-s2.0-S2666720723001443-main.pdf)
+[^1^]: [Ahmadi, T., Wulandari, A., & Suhatman, H. Sistem Customer Churn Prediction Menggunakan Machine Learning pada Perusahaan ISP.](https://www.kaggle.com/datasets/muhammadshahidazeem/customer-churn-dataset/data)
 
 ## Business Understanding
 
@@ -20,7 +20,7 @@ Dengan melakukan analisis prediksi churn, perusahaan dapat mengidentifikasi pela
 
 ### Goals
 
-- Membangun model prediktif yang dapat memprediksi churn pelanggan dengan akurasi di atas 90%.
+- Membangun model prediktif yang dapat memprediksi churn pelanggan dengan akurasi di atas 85%.
 - Mengidentifikasi fitur-fitur yang paling berkontribusi terhadap churn pelanggan.
 - Menggunakan model untuk mengidentifikasi pelanggan yang berisiko churn.
 - Mengambil tindakan proaktif berdasarkan prediksi model untuk mempertahankan pelanggan dan mengurangi churn.
@@ -28,22 +28,24 @@ Dengan melakukan analisis prediksi churn, perusahaan dapat mengidentifikasi pela
 
 ## Data Understanding
 
-Data yang digunakan pada proyek kali ini adalah data yang diambil dari <a href='https://www.kaggle.com/datasets/nelgiriyewithana/apple-quality' target='_blank'>Kaggle</a>. Trainning file untuk dataset CHURN berisi kumpulan 440882 record pelanggan beserta fitur dan label churn mereka masing-masing. File ini berfungsi sebagai sumber utama untuk melatih model machine learning untuk memprediksi churn pelanggan. Setiap record dalam file training mewakili pelanggan dan mencakup fitur seperti CustomerID, Age Gender, Tenure, Usage Frequency, Support Calls, Payment Delay, Subscription Type, Contract Length, Total Spend, dan Last Interaction. Label churn menunjukkan apakah pelanggan telah churn (1) atau tidak (0). Dengan memanfaatkan file pelatihan ini, bisnis dapat mengembangkan model prediksi churn yang akurat untuk mengidentifikasi pelanggan yang paling mungkin untuk churn dan mengambil tindakan proaktif untuk mempertahankannya.
+Data yang digunakan pada proyek kali ini adalah data yang diambil dari <a href='https://www.kaggle.com/datasets/nelgiriyewithana/apple-quality' target='_blank'>Kaggle</a>. Trainning file untuk dataset CHURN berisi kumpulan 505207 record pelanggan beserta fitur dan label churn mereka masing-masing. File ini berfungsi sebagai sumber utama untuk melatih model machine learning untuk memprediksi churn pelanggan. Setiap record dalam file training mewakili pelanggan dan mencakup fitur seperti CustomerID, Age Gender, Tenure, Usage Frequency, Support Calls, Payment Delay, Subscription Type, Contract Length, Total Spend, dan Last Interaction. Label churn menunjukkan apakah pelanggan telah churn (1) atau tidak (0). Dengan memanfaatkan file pelatihan ini, bisnis dapat mengembangkan model prediksi churn yang akurat untuk mengidentifikasi pelanggan yang paling mungkin untuk churn dan mengambil tindakan proaktif untuk mempertahankannya.
 
 ### Variabel-variabel pada Customer Churn dataset adalah sebagai berikut:
 
 - `CustomerID`: ID unik untuk setiap pelanggan.
 - `Age`: Usia pelanggan.
 - `Gender`: Jenis kelamin pelanggan.
-- `Tenure`: Masa aktif pelanggan dalam bulan.
+- `Tenure`: Masa aktif pelanggan dalam bulan. 
 - `Usage Frequency`: Frekuensi penggunaan layanan dalam sebulan.
 - `Support Calls`: Jumlah panggilan dukungan pelanggan.
 - `Payment Delay`: Jumlah hari keterlambatan pembayaran.
-- `Subscription Type`: Tipe langganan pelanggan.
+- `Subscription Type`: Tipe langganan pelanggan seperti standar, basic, dan premium.
 - `Contract Length`: Durasi kontrak pelanggan dalam bulan.
 - `Total Spend`: Total pengeluaran pelanggan.
 - `Last Interaction`: Waktu interaksi terakhir dengan pelanggan.
 - `Churn`: Label churn pelanggan (1: churn, 0: tidak churn).
+
+### Univariate Analysis
 
 ## Data Preparation
 
