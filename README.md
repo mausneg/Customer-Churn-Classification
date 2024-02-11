@@ -9,6 +9,7 @@ Misalnya, dalam industri telekomunikasi, pelanggan mungkin memilih untuk berhent
 Dengan melakukan analisis prediksi churn, perusahaan dapat mengidentifikasi pelanggan yang berisiko churn dan mengambil tindakan proaktif untuk mempertahankan mereka. Misalnya, mereka mungkin menawarkan diskon atau peningkatan layanan untuk meningkatkan kepuasan pelanggan dan mencegah mereka berhenti berlangganan. Oleh karena itu, analisis prediksi churn adalah alat yang sangat berharga untuk mempertahankan pelanggan dan meningkatkan kinerja bisnis [^1^].
 
 [^1^]: [Ahmadi, T., Wulandari, A., & Suhatman, H. Sistem Customer Churn Prediction Menggunakan Machine Learning pada Perusahaan ISP.](https://repository.pnj.ac.id/id/eprint/14345/3/JURNAL.pdf
+
 ## Business Understanding
 
 ### Problem Statements
@@ -31,7 +32,7 @@ Data yang digunakan pada proyek kali ini adalah data yang diambil dari <a href='
 
 ### Deskripsi Data
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
 Berdasarkan informasi dari Kaggle, variabel-variabel pada Diamond dataset adalah sebagai berikut:
 
@@ -54,7 +55,7 @@ Dari `info()` didapatkan informasi bahwa:
 - Terdapat 8 kolom bertipe data `float` yaitu `CustomerID`, `Age`, `Tenure`, `Usage Frequency`, `Support Calls`, `Payment Delay`, `Total Spend`, `Last Interaction`, dan `Churn`.
 - Terdapat 2 variabel yang bertipe data tidak sesuai, yaitu `Churn` dan `CustomerID`. Variabel `Churn` seharusnya bertipe data boolean atau dapat juga integer karena true/false akan diwakilkan oleh 1/0, sedangkan variabel `CustomerID` sedangkan variabel `CustomerID` seharusnya bertipe data string. Akan tetapi, variabel `CustomerID` tidak akan digunakan dalam proses analisis data, sehingga tidak perlu diubah tipe datanya.
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 Dari `describe()` dapat diketahui informasi sebagai berikut:
 
@@ -71,12 +72,36 @@ Dengan min, max, median, dan mean dari setiap kolom dapat diketahui tidak ada ni
 
 ### Univariate Analysis
 
-![alt text](image.png)
+![alt text](images/image.png)
 
-Dari hasil analisis univariate di atas, dapat diamati bahwa:
-- Pada countplot dari variabel `Gender`, terlihat bahwa jumlah pelanggan laki-laki lebih banyak dibandingkan dengan pelanggan perempuan. 
+Dari hasil analisis univariate pada categorical features di atas, dapat diamati bahwa:
+
+- Pada countplot dari variabel `Gender`, terlihat bahwa jumlah pelanggan laki-laki lebih banyak dibandingkan dengan pelanggan perempuan.
 - Pada countplot dari variabel `Subscription Type`, terlihat bahwa sebaran pelanggan relatif merata pada masing-masing tipe subscription.
 - Pada countplot dari variabel `Contract Length`, terlihat bahwa pelanggan lebih banyak yang memiliki kontrak tahunan dan triwulanan dibandingkan dengan kontrak bulanan.
+
+![alt text](images/image-3.png)
+
+Dari hasil analisis univariate pada numerical features di atas, dapat diamati bahwa:
+- Pada histogram dari variabel `Age`, terlihat bahwa sebagian besar pelanggan berusia antara 20-50 tahun.
+- Pada histogram dari variabel `Tenure` dan `Usage Frequency`, terlihat bahwa sebaran pelanggan relatif merata.
+- Pada histogram dari variabel `Support Calls` terlihat bahwa sebagian besar pelanggan melakukan panggilan dukungan kurang dari 5 kali.
+- Pada histogram dari variabel `Payment Delay`, terlihat bahwa sebagian besar pelanggan melakukan keterlambatan pembayaran kurang dari 20 hari.
+- Pada histogram dari variabel `Total Spend`, terlihat bahwa sebagian besar pelanggan mengeluarkan biaya lebih dari 500 dolar.
+- Pada histogram dari variabel `Last Interaction`, terlihat bahwa sebaran pelanggan relatif merata.
+
+### Multivariate Analysis
+
+Pada analisis multivariate, akan dilakukan analisis korelasi antar variabel pada dataset. Hal ini dilakukan untuk mengetahui korelasi antar variabel pada dataset sehingga dapat diketahui variabel mana saja yang memiliki korelasi tinggi dengan label churn.
+
+![alt text](images/image-4.png)
+
+Dari diagram heatmap korelasi di atas, dapat diamati bahwa:
+- Hanya variabel `Support Calls` yang memiliki korelasi moderat dengan label churn.
+- Variabel `Age`, `Payment Delay`, `Last Interaction`,dan `Total Spend` memiliki korelasi rendah dengan label churn.
+- Sedangkan variabel `Tenure` dan `Usage Frequency` memiliki korelasi mendekati nol dengan label churn.
+
+Pada kasus kali ini, karena model yang akan digunakan adalah deep learning, maka tidak variabel yang memiliki korelasi rendah dengan label churn tidak dihapus. Hal ini karena deep learning dapat memberikan weight yang tepat untuk setiap variabel sehingga tidak perlu melakukan feature selection.
 
 ## Data Preparation
 
