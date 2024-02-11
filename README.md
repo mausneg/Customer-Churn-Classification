@@ -222,7 +222,7 @@ Dari Gambar 3 dapat diamati bahwa:
 - Variabel `Age`, `Payment Delay`, `Last Interaction`,dan `Total Spend` memiliki korelasi rendah dengan label _churn_.
 - Sedangkan variabel `Tenure` dan `Usage Frequency` memiliki korelasi mendekati nol dengan label _churn_.
 
-Pada kasus kali ini, karena model yang akan digunakan adalah _deep learning_, maka tidak variabel yang memiliki korelasi rendah dengan label _churn_ tidak dihapus. Hal ini karena _deep learning_ dapat memberikan _weight_ yang tepat untuk setiap variabel sehingga tidak perlu melakukan _feature selection_.
+Dari hasil analisis _multivariate_ di atas, didapatkan informasi bahwa variabel `Support Calls` merupakan variabel yang paling berkontribusi terhadap label _churn_. Sedangkan variabel `Age`, `Payment Delay`, `Last Interaction`, dan `Total Spend` memiliki kontribusi yang rendah terhadap label _churn_. Sedangkan variabel `Tenure` dan `Usage Frequency` hampir tidak memiliki kontribusi terhadap label _churn_. Oleh karena itu, `Tenure` dan `Usage Frequency` tidak akan digunakan dalam proses pemodelan.
 
 ## Data Preparation
 
@@ -271,7 +271,7 @@ Gambar 4. Diagram Plot Evaluasi Model _Customer Churn_
 
 Dari Gambar 4, dapat diamati bahwa:
 
-- Model memiliki akurasi sekitar 0.92 pada data _training_, 0.92 pada data _testing_, dan 0.92 pada data _validation_.
+- Model memiliki akurasi sekitar 0.92 pada data _training_, 0.92 pada data _testing_, dan 0.91 pada data _validation_.
 - Model memiliki akurasi yang konsisten pada data _training_, data _testing_, dan data _validation_ sehingga model dapat dikatakan _goodfit_. Hal ini menunjukkan bahwa model tidak _overfitting_ atau _underfitting_. _Overfitting_ sendiri terjadi ketika model memiliki perbedaan _accuracy_ yang besar antara data _training_ dan data _testing_ atau antara data _testing_ dan data _validation_. Sedangkan _underfitting_ terjadi ketika model memiliki _accuracy_ yang rendah pada data _training_, data _testing_, dan data _validation_.
 - Model memiliki performa yang sangat baik dalam memprediksi _churn_ pelanggan dengan akurasi di atas 85%.
 - Dengan menggunakan model ini, perusahaan dapat mengidentifikasi pelanggan yang berisiko _churn_ dan mengambil tindakan proaktif untuk mempertahankan mereka. Misalnya, mereka mungkin menawarkan diskon, peningkatan layanan, atau komunikasi pribadi untuk meningkatkan kepuasan dan loyalitas pelanggan.
