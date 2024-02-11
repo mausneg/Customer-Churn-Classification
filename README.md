@@ -52,6 +52,8 @@ Dari `info()` didapatkan informasi bahwa:
 - Terdapat 8 kolom bertipe data `float` yaitu `CustomerID`, `Age`, `Tenure`, `Usage Frequency`, `Support Calls`, `Payment Delay`, `Total Spend`, `Last Interaction`, dan `Churn`.
 - Terdapat 2 variabel yang bertipe data tidak sesuai, yaitu `Churn` dan `CustomerID`. Variabel `Churn` seharusnya bertipe data boolean atau dapat juga integer karena true/false akan diwakilkan oleh 1/0, sedangkan variabel `CustomerID` sedangkan variabel `CustomerID` seharusnya bertipe data string. Akan tetapi, variabel `CustomerID` tidak akan digunakan dalam proses analisis data, sehingga tidak perlu diubah tipe datanya.
 
+![alt text](image-1.png)
+
 Dari `describe()` dapat diketahui informasi sebagai berikut:
 
 - Count: Jumlah data pada setiap kolom.
