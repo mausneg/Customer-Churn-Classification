@@ -55,6 +55,8 @@ Dari Gambar 1 didapatkan informasi bahwa:
 - Terdapat 8 kolom bertipe data `float` yaitu `CustomerID`, `Age`, `Tenure`, `Usage Frequency`, `Support Calls`, `Payment Delay`, `Total Spend`, `Last Interaction`, dan `Churn`.
 - Terdapat 2 variabel yang bertipe data tidak sesuai, yaitu `Churn` dan `CustomerID`. Variabel `Churn` seharusnya bertipe data _boolean_ atau dapat juga _integer_ karena _true_/_false_ akan diwakilkan oleh 1/0, sedangkan variabel `CustomerID` sedangkan variabel `CustomerID` seharusnya bertipe data string. Akan tetapi, variabel `CustomerID` tidak akan digunakan dalam proses analisis data, sehingga tidak perlu diubah tipe datanya.
 
+Tabel 1. Statistik Deskriptif Customer _Churn_
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -169,8 +171,6 @@ Dari Gambar 1 didapatkan informasi bahwa:
     </tr>
   </tbody>
 </table>
-
-Tabel 1. Statistik Deskriptif Customer _Churn_
 
 Dari Tabel 1, dapat diketahui informasi sebagai berikut:
 
