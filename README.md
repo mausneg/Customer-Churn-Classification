@@ -45,17 +45,101 @@ Berdasarkan informasi dari Kaggle, variabel-variabel pada _customer churn datase
 - `Last Interaction`: Waktu interaksi terakhir dengan pelanggan dalam hari.
 - `Churn`: Label _churn_ pelanggan (1: _churn_, 0: tidak _churn_).
 
-![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/main/images/image-2.png)
+Tabel 1. Statistik Deskriptif Customer _Churn_
 
-Gambar 1. Deskripsi Data _Customer Churn_
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Column</th>
+      <th>Non-null Values</th>
+      <th>dtype</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CustomerID</td>
+      <td>505206</td>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Age</td>
+      <td>505206</td>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Gender</td>
+      <td>505206</td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Tenure</td>
+      <td>505206</td>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Usage Frequency</td>
+      <td>505206</td>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Support Calls</td>
+      <td>505206</td>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Payment Delay</td>
+      <td>505206</td>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Subscription Type</td>
+      <td>505206</td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Contract Length</td>
+      <td>505206</td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Total Spend</td>
+      <td>505206</td>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Last Interaction</td>
+      <td>505206</td>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Churn</td>
+      <td>505206</td>
+      <td>int32</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
-Dari Gambar 1 didapatkan informasi bahwa:
+Dari Tabel 1 didapatkan informasi bahwa:
 
 - Terdapat 3 kolom bertipe data `object` yaitu `Contract Length`, `Gender`, dan `Subscription Type`.
 - Terdapat 8 kolom bertipe data `float` yaitu `CustomerID`, `Age`, `Tenure`, `Usage Frequency`, `Support Calls`, `Payment Delay`, `Total Spend`, `Last Interaction`, dan `Churn`.
 - Terdapat 2 variabel yang bertipe data tidak sesuai, yaitu `Churn` dan `CustomerID`. Variabel `Churn` seharusnya bertipe data _boolean_ atau dapat juga _integer_ karena _true_/_false_ akan diwakilkan oleh 1/0, sedangkan variabel `CustomerID` sedangkan variabel `CustomerID` seharusnya bertipe data string. Akan tetapi, variabel `CustomerID` tidak akan digunakan dalam proses analisis data, sehingga tidak perlu diubah tipe datanya.
 
-Tabel 1. Statistik Deskriptif Customer _Churn_
+Tabel 2. Statistik Deskriptif Customer _Churn_
 
 <table border="1" class="dataframe">
   <thead>
@@ -172,7 +256,7 @@ Tabel 1. Statistik Deskriptif Customer _Churn_
   </tbody>
 </table>
 
-Dari Tabel 1, dapat diketahui informasi sebagai berikut:
+Dari Tabel 2, dapat diketahui informasi sebagai berikut:
 
 - `Count`: Jumlah data pada setiap kolom.
 - `Mean`: Rata-rata dari setiap kolom.
@@ -189,9 +273,9 @@ Dengan _min_, _max_, median, dan mean dari setiap kolom dapat diketahui tidak ad
 
 ![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/main/images/image.png)
 
-Gambar 2. Univariate Analysis _Customer Churn_
+Gambar 1. Univariate Analysis _Customer Churn_
 
-Dari Gambar 2 hasil analisis _univariate_ pada _categorical features_ di atas, dapat diamati bahwa:
+Dari Gambar 1 hasil analisis _univariate_ pada _categorical features_ di atas, dapat diamati bahwa:
 
 - Pada _countplot_ dari variabel `Gender`, terlihat bahwa jumlah pelanggan laki-laki lebih banyak dibandingkan dengan pelanggan perempuan.
 - Pada _countplot_ dari variabel `Subscription Type`, terlihat bahwa sebaran pelanggan relatif merata pada masing-masing tipe _subscription_.
@@ -214,9 +298,9 @@ Pada analisis _multivariate_, akan dilakukan analisis korelasi antar variabel pa
 
 ![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/main/images/image-4.png)
 
-Gambar 3. _Heatmap_ Korelasi _Customer Churn_
+Gambar 2. _Heatmap_ Korelasi _Customer Churn_
 
-Dari Gambar 3 dapat diamati bahwa:
+Dari Gambar 2 dapat diamati bahwa:
 
 - Hanya variabel `Support Calls` yang memiliki korelasi moderat dengan label _churn_.
 - Variabel `Age`, `Payment Delay`, `Last Interaction`,dan `Total Spend` memiliki korelasi rendah dengan label _churn_.
@@ -267,9 +351,9 @@ Pada tahap ini, model akan dievaluasi dengan menggunakan data _testing_ dan data
 
 ![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/main/images/image-5.png)
 
-Gambar 4. Diagram Plot Evaluasi Model _Customer Churn_
+Gambar 3. Diagram Plot Evaluasi Model _Customer Churn_
 
-Dari Gambar 4, dapat diamati bahwa:
+Dari Gambar 3, dapat diamati bahwa:
 
 - Model memiliki akurasi sekitar 0.92 pada data _training_, 0.92 pada data _testing_, dan 0.91 pada data _validation_.
 - Model memiliki akurasi yang konsisten pada data _training_, data _testing_, dan data _validation_ sehingga model dapat dikatakan _goodfit_. Hal ini menunjukkan bahwa model tidak _overfitting_ atau _underfitting_. _Overfitting_ sendiri terjadi ketika model memiliki perbedaan _accuracy_ yang besar antara data _training_ dan data _testing_ atau antara data _testing_ dan data _validation_. Sedangkan _underfitting_ terjadi ketika model memiliki _accuracy_ yang rendah pada data _training_, data _testing_, dan data _validation_.
