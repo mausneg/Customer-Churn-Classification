@@ -127,7 +127,7 @@ Tabel 1. Statistik Deskriptif Customer _Churn_
       <th>11</th>
       <td>Churn</td>
       <td>505206</td>
-      <td>int32</td>
+      <td>float64</td>
     </tr>
   </tbody>
 </table>
@@ -281,7 +281,7 @@ Dari Gambar 1 hasil analisis _univariate_ pada _categorical features_ di atas, d
 - Pada _countplot_ dari variabel `Subscription Type`, terlihat bahwa sebaran pelanggan relatif merata pada masing-masing tipe _subscription_.
 - Pada _countplot_ dari variabel `Contract Length`, terlihat bahwa pelanggan lebih banyak yang memiliki kontrak tahunan dan triwulanan dibandingkan dengan kontrak bulanan.
 
-![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/main/images/image-3.png)
+![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/main/images/image-3.png?raw=True)
 
 Dari hasil analisis _univariate_ pada _numerical features_ di atas, dapat diamati bahwa:
 
@@ -296,7 +296,7 @@ Dari hasil analisis _univariate_ pada _numerical features_ di atas, dapat diamat
 
 Pada analisis _multivariate_, akan dilakukan analisis korelasi antar variabel pada dataset. Hal ini dilakukan untuk mengetahui korelasi antar variabel pada dataset sehingga dapat diketahui variabel mana saja yang memiliki korelasi tinggi dengan label _churn_.
 
-![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/main/images/image-4.png)
+![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/main/images/image-4.png?raw=True)
 
 Gambar 2. _Heatmap_ Korelasi _Customer Churn_
 
@@ -349,7 +349,7 @@ Selanjutnya, model akan di _compile_ dengan _optimizer_ adam dengan _learning ra
 
 Pada tahap ini, model akan dievaluasi dengan menggunakan data _testing_ dan data _validation_. Evaluasi dilakukan dengan menggunakan metrik _accuracy_. _Accuracy_ sendiri merupakan metrik yang paling umum digunakan untuk mengukur performa model klasifikasi. _Accuracy_ mengukur seberapa sering model membuat prediksi label yang benar dari label sebenarnya. Dengan menggunakan metrik _accuracy_, model akan dievaluasi dengan menggunakan data _testing_ dan data _validation_.
 
-![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/main/images/image-5.png)
+![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/main/images/image-5.png?raw=True)
 
 Gambar 3. Diagram Plot Evaluasi Model _Customer Churn_
 
