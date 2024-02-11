@@ -20,7 +20,10 @@ Dengan melakukan analisis prediksi churn, perusahaan dapat mengidentifikasi pela
 
 ### Goals
 
-- Membangun model prediktif yang dapat memprediksi churn pelanggan dengan akurasi di atas 85%.
+- Membangun model prediktif yang dapat memprediksi churn pelanggan dengan akurasi di atMisalnya, mereka mungkin menawarkan diskon, peningkatan layanan, atau komunikasi pribadi untuk meningkatkan kepuasan dan loyalitas pelanggan.
+
+Dengan pendekatan ini, kami dapat membantu perusahaan mengurangi churn pelanggan, meningkatkan retensi pelanggan, dan pada akhirnya meningkatkan pendapatan dan pertumbuhan bisnis.as 85%.
+
 - Mengidentifikasi fitur-fitur yang paling berkontribusi terhadap churn pelanggan.
 - Menggunakan model untuk mengidentifikasi pelanggan yang berisiko churn.
 - Mengambil tindakan proaktif berdasarkan prediksi model untuk mempertahankan pelanggan dan mengurangi churn.
@@ -154,4 +157,5 @@ Dari hasil evaluasi di atas, dapat diamati bahwa:
 - Model memiliki akurasi sekitar 0.92 pada data training, 0.92 pada data testing, dan 0.92 pada data validation.
 - Model memiliki akurasi yang konsisten pada data training, data testing, dan data validation sehingga model dapat dikatakan goodfit. Hal ini menunjukkan bahwa model tidak overfitting atau underfitting. Overfitting sendiri terjadi ketika model memiliki perbedaan accuracy yang besar antara data training dan data testing atau antara data testing dan data validation. Sedangkan underfitting terjadi ketika model memiliki accuracy yang rendah pada data training, data testing, dan data validation.
 - Model memiliki performa yang sangat baik dalam memprediksi churn pelanggan dengan akurasi di atas 90%.
-- Dengan menggunakan model ini, perusahaan dapat mengidentifikasi pelanggan yang berisiko churn dan mengambil tindakan proaktif untuk mempertahankan mereka.
+- Dengan menggunakan model ini, perusahaan dapat mengidentifikasi pelanggan yang berisiko churn dan mengambil tindakan proaktif untuk mempertahankan mereka. Misalnya, mereka mungkin menawarkan diskon, peningkatan layanan, atau komunikasi pribadi untuk meningkatkan kepuasan dan loyalitas pelanggan.
+- Dengan pendekatan ini, model dapat membantu perusahaan mengurangi churn pelanggan, meningkatkan retensi pelanggan, dan pada akhirnya meningkatkan pendapatan dan pertumbuhan bisnis.
