@@ -30,20 +30,40 @@ Dengan melakukan analisis prediksi churn, perusahaan dapat mengidentifikasi pela
 
 Data yang digunakan pada proyek kali ini adalah data yang diambil dari <a href='https://www.kaggle.com/datasets/nelgiriyewithana/apple-quality' target='_blank'>Kaggle</a>. Trainning file untuk dataset CHURN berisi kumpulan 505207 record pelanggan beserta fitur dan label churn mereka masing-masing. File ini berfungsi sebagai sumber utama untuk melatih model machine learning untuk memprediksi churn pelanggan. Setiap record dalam file training mewakili pelanggan dan mencakup fitur seperti CustomerID, Age Gender, Tenure, Usage Frequency, Support Calls, Payment Delay, Subscription Type, Contract Length, Total Spend, dan Last Interaction. Label churn menunjukkan apakah pelanggan telah churn (1) atau tidak (0). Dengan memanfaatkan file pelatihan ini, bisnis dapat mengembangkan model prediksi churn yang akurat untuk mengidentifikasi pelanggan yang paling mungkin untuk churn dan mengambil tindakan proaktif untuk mempertahankannya.
 
-### Variabel-variabel pada Customer Churn dataset adalah sebagai berikut:
+### Deskripsi Data
+
+Berdasarkan informasi dari Kaggle, variabel-variabel pada Diamond dataset adalah sebagai berikut:
 
 - `CustomerID`: ID unik untuk setiap pelanggan.
-- `Age`: Usia pelanggan.
-- `Gender`: Jenis kelamin pelanggan.
-- `Tenure`: Masa aktif pelanggan dalam bulan. 
-- `Usage Frequency`: Frekuensi penggunaan layanan dalam sebulan.
-- `Support Calls`: Jumlah panggilan dukungan pelanggan.
-- `Payment Delay`: Jumlah hari keterlambatan pembayaran.
+- `Age`: Usia pelanggan dengan rentang 18-65 tahun.
+- `Gender`: Jenis kelamin pelanggan (Pria/Wanita).
+- `Tenure`: Masa aktif pelanggan dengan rentang 1-60 bulan.
+- `Usage Frequency`: Frekuensi penggunaan layanan dengan rentang 1-30 kali.
+- `Support Calls`: Jumlah panggilan dukungan pelanggan dengan rentang 0-10 panggilan.
+- `Payment Delay`: Jumlah hari keterlambatan pembayaran dengan rentang 0-30 hari.
 - `Subscription Type`: Tipe langganan pelanggan seperti standar, basic, dan premium.
-- `Contract Length`: Durasi kontrak pelanggan dalam bulan.
-- `Total Spend`: Total pengeluaran pelanggan.
-- `Last Interaction`: Waktu interaksi terakhir dengan pelanggan.
+- `Contract Length`: Tipe kontrak pelanggan seperti bulanan, tahunan, dan 3 tahunan.
+- `Total Spend`: Total pengeluaran pelanggan dalam dolar.
+- `Last Interaction`: Waktu interaksi terakhir dengan pelanggan dalam hari.
 - `Churn`: Label churn pelanggan (1: churn, 0: tidak churn).
+
+Dari `info()` didapatkan informasi bahwa:
+
+- Terdapat 3 kolom bertipe data `object` yaitu `Contract Length`, `Gender`, dan `Subscription Type`.
+- Terdapat 8 kolom bertipe data `float` yaitu `CustomerID`, `Age`, `Tenure`, `Usage Frequency`, `Support Calls`, `Payment Delay`, `Total Spend`, `Last Interaction`, dan `Churn`.
+- Terdapat 2 variabel yang bertipe data tidak sesuai, yaitu `Churn` dan `CustomerID`. Variabel `Churn` seharusnya bertipe data boolean atau dapat juga integer karena true/false akan diwakilkan oleh 1/0, sedangkan variabel `CustomerID` sedangkan variabel `CustomerID` seharusnya bertipe data string. Akan tetapi, variabel `CustomerID` tidak akan digunakan dalam proses analisis data, sehingga tidak perlu diubah tipe datanya.
+
+Dari `describe()` dapat diketahui informasi sebagai berikut:
+
+- Count: Jumlah data pada setiap kolom.
+- Mean: Rata-rata dari setiap kolom.
+- Std: Standar deviasi dari setiap kolom.
+- Min: Nilai minimum dari setiap kolom.
+- 25%: Kuartil pertama dari setiap kolom.
+- 50%: Median dari setiap kolom.
+- 75%: Kuartil ketiga dari setiap kolom.
+- Max: Nilai maksimum dari setiap kolom.
+Dengan min, max, median, dan mean dari setiap kolom dapat diketahui tidak ada nilai yang jauh dari nilai rata-rata, sehingga dapat disimpulkan bahwa tidak ada outlier pada dataset.
 
 ### Univariate Analysis
 
