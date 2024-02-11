@@ -144,4 +144,13 @@ Selanjutnya, model akan di compile dengan optimizer adam dengan learning rate de
 
 ## Evaluation
 
-Model akan dievaluasi dengan menggunakan validation dataset. Hal ini dilakukan untuk mengukur performa model pada data yang belum pernah dilihat sebelumnya. Model akan dievaluasi dengan menggunakan metrics accuracy. Sehingga didapatkan hasil akhir dari model yang telah dibuat yaitu 0.9155 pada train accuracy, 0.9193 pada test accuracy, dan 0.9160 pada val accuracy. Hal ini menunjukkan bahwa model yang telah dibuat memiliki performa yang baik sehingga tidak terjadi overfitting maupun underfitting.
+Pada tahap ini, model akan dievaluasi dengan menggunakan data testing dan data validation. Evaluasi dilakukan dengan menggunakan metrik accuracy. Accuracy merupakan metrik yang paling umum digunakan untuk mengukur performa model klasifikasi. Accuracy mengukur seberapa sering model membuat prediksi yang benar. Dengan menggunakan metrik accuracy, model akan dievaluasi dengan menggunakan data testing dan data validation. 
+
+![alt text](images/image-5.png)
+
+Dari hasil evaluasi di atas, dapat diamati bahwa:
+- Model memiliki akurasi sebesar 0.92 pada data training, 0.92 pada data testing, dan 0.92 pada data validation.
+- Model memiliki akurasi yang konsisten pada data training, data testing, dan data validation sehingga model dapat dikatakan goodfit. Hal ini menunjukkan bahwa model tidak overfitting atau underfitting. Overfitting sendiri terjadi ketika model memiliki perbedaan accuracy yang besar antara data training dan data testing atau antara data testing dan data validation. Sedangkan underfitting terjadi ketika model memiliki accuracy yang rendah pada data training, data testing, dan data validation.
+- Model memiliki performa yang sangat baik dalam memprediksi churn pelanggan dengan akurasi di atas 90%.
+- Dengan menggunakan model ini, perusahaan dapat mengidentifikasi pelanggan yang berisiko churn dan mengambil tindakan proaktif untuk mempertahankan mereka.
+
