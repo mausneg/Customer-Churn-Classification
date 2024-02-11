@@ -271,7 +271,7 @@ Dengan _min_, _max_, median, dan mean dari setiap kolom dapat diketahui tidak ad
 
 ### Univariate Analysis
 
-![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/main/images/image.png)
+![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/main/images/image.png?raw=True)
 
 Gambar 1. Univariate Analysis _Category Features_ _Customer Churn_
 
@@ -360,7 +360,7 @@ Dari Gambar 4, dapat diamati bahwa:
 - Model memiliki akurasi sekitar 0.92 pada data _training_, 0.92 pada data _testing_, dan 0.91 pada data _validation_.
 - Model memiliki akurasi yang konsisten pada data _training_, data _testing_, dan data _validation_ sehingga model dapat dikatakan _goodfit_. Hal ini menunjukkan bahwa model tidak _overfitting_ atau _underfitting_. _Overfitting_ sendiri terjadi ketika model memiliki perbedaan _accuracy_ yang besar antara data _training_ dan data _testing_ atau antara data _testing_ dan data _validation_. Sedangkan _underfitting_ terjadi ketika model memiliki _accuracy_ yang rendah pada data _training_, data _testing_, dan data _validation_.
 - Model memiliki performa yang sangat baik dalam memprediksi _churn_ pelanggan dengan akurasi di atas 85%.
-- Dengan menggunakan model ini, per?raw=Trueusahaan dapat mengidentifikasi pelanggan yang berisiko _churn_ dan mengambil tindakan proaktif untuk mempertahankan mereka. Misalnya, mereka mungkin menawarkan diskon, peningkatan layanan, atau komunikasi pribadi untuk meningkatkan kepuasan dan loyalitas pelanggan.
+- Dengan menggunakan model ini, perusahaan dapat mengidentifikasi pelanggan yang berisiko _churn_ dan mengambil tindakan proaktif untuk mempertahankan mereka. Misalnya, mereka mungkin menawarkan diskon, peningkatan layanan, atau komunikasi pribadi untuk meningkatkan kepuasan dan loyalitas pelanggan.
 - Dengan pendekatan ini, model dapat membantu perusahaan mengurangi _churn_ pelanggan, meningkatkan retensi pelanggan, dan pada akhirnya meningkatkan pendapatan dan pertumbuhan bisnis.
 
 ## References
