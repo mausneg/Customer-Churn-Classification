@@ -273,7 +273,7 @@ Dengan _min_, _max_, median, dan mean dari setiap kolom dapat diketahui tidak ad
 
 ![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/main/images/image.png)
 
-Gambar 1. Univariate Analysis _Customer Churn_
+Gambar 1. Univariate Analysis _Category Features_ _Customer Churn_
 
 Dari Gambar 1 hasil analisis _univariate_ pada _categorical features_ di atas, dapat diamati bahwa:
 
@@ -283,7 +283,9 @@ Dari Gambar 1 hasil analisis _univariate_ pada _categorical features_ di atas, d
 
 ![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/main/images/image-3.png?raw=True)
 
-Dari hasil analisis _univariate_ pada _numerical features_ di atas, dapat diamati bahwa:
+Gambar 2. Univariate Analysis _Numerical Features_ _Customer Churn_
+
+Dari Gambar 2 dapat diamati bahwa:
 
 - Pada histogram dari variabel `Age`, terlihat bahwa sebagian besar pelanggan berusia antara 20-50 tahun.
 - Pada histogram dari variabel `Tenure` dan `Usage Frequency`, terlihat bahwa sebaran pelanggan relatif merata.
@@ -298,9 +300,9 @@ Pada analisis _multivariate_, akan dilakukan analisis korelasi antar variabel pa
 
 ![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/main/images/image-4.png?raw=True)
 
-Gambar 2. _Heatmap_ Korelasi _Customer Churn_
+Gambar 3. _Heatmap_ Korelasi _Customer Churn_
 
-Dari Gambar 2 dapat diamati bahwa:
+Dari Gambar 3 dapat diamati bahwa:
 
 - Hanya variabel `Support Calls` yang memiliki korelasi moderat dengan label _churn_.
 - Variabel `Age`, `Payment Delay`, `Last Interaction`,dan `Total Spend` memiliki korelasi rendah dengan label _churn_.
@@ -351,14 +353,14 @@ Pada tahap ini, model akan dievaluasi dengan menggunakan data _testing_ dan data
 
 ![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/main/images/image-5.png?raw=True)
 
-Gambar 3. Diagram Plot Evaluasi Model _Customer Churn_
+Gambar 4. Diagram Plot Evaluasi Model _Customer Churn_
 
-Dari Gambar 3, dapat diamati bahwa:
+Dari Gambar 4, dapat diamati bahwa:
 
 - Model memiliki akurasi sekitar 0.92 pada data _training_, 0.92 pada data _testing_, dan 0.91 pada data _validation_.
 - Model memiliki akurasi yang konsisten pada data _training_, data _testing_, dan data _validation_ sehingga model dapat dikatakan _goodfit_. Hal ini menunjukkan bahwa model tidak _overfitting_ atau _underfitting_. _Overfitting_ sendiri terjadi ketika model memiliki perbedaan _accuracy_ yang besar antara data _training_ dan data _testing_ atau antara data _testing_ dan data _validation_. Sedangkan _underfitting_ terjadi ketika model memiliki _accuracy_ yang rendah pada data _training_, data _testing_, dan data _validation_.
 - Model memiliki performa yang sangat baik dalam memprediksi _churn_ pelanggan dengan akurasi di atas 85%.
-- Dengan menggunakan model ini, perusahaan dapat mengidentifikasi pelanggan yang berisiko _churn_ dan mengambil tindakan proaktif untuk mempertahankan mereka. Misalnya, mereka mungkin menawarkan diskon, peningkatan layanan, atau komunikasi pribadi untuk meningkatkan kepuasan dan loyalitas pelanggan.
+- Dengan menggunakan model ini, per?raw=Trueusahaan dapat mengidentifikasi pelanggan yang berisiko _churn_ dan mengambil tindakan proaktif untuk mempertahankan mereka. Misalnya, mereka mungkin menawarkan diskon, peningkatan layanan, atau komunikasi pribadi untuk meningkatkan kepuasan dan loyalitas pelanggan.
 - Dengan pendekatan ini, model dapat membantu perusahaan mengurangi _churn_ pelanggan, meningkatkan retensi pelanggan, dan pada akhirnya meningkatkan pendapatan dan pertumbuhan bisnis.
 
 ## References
