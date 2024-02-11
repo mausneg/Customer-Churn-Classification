@@ -63,6 +63,7 @@ Dari `describe()` dapat diketahui informasi sebagai berikut:
 - 50%: Median dari setiap kolom.
 - 75%: Kuartil ketiga dari setiap kolom.
 - Max: Nilai maksimum dari setiap kolom.
+
 Dengan min, max, median, dan mean dari setiap kolom dapat diketahui tidak ada nilai yang jauh dari nilai rata-rata, sehingga dapat disimpulkan bahwa tidak ada outlier pada dataset.
 
 ### Univariate Analysis
