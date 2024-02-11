@@ -31,6 +31,8 @@ Data yang digunakan pada proyek kali ini adalah data yang diambil dari <a href='
 
 ### Deskripsi Data
 
+![alt text](image-2.png)
+
 Berdasarkan informasi dari Kaggle, variabel-variabel pada Diamond dataset adalah sebagai berikut:
 
 - `CustomerID`: ID unik untuk setiap pelanggan.
