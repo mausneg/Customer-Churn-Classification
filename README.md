@@ -55,7 +55,7 @@ Dari `info()` didapatkan informasi bahwa:
 - Terdapat 8 kolom bertipe data `float` yaitu `CustomerID`, `Age`, `Tenure`, `Usage Frequency`, `Support Calls`, `Payment Delay`, `Total Spend`, `Last Interaction`, dan `Churn`.
 - Terdapat 2 variabel yang bertipe data tidak sesuai, yaitu `Churn` dan `CustomerID`. Variabel `Churn` seharusnya bertipe data boolean atau dapat juga integer karena true/false akan diwakilkan oleh 1/0, sedangkan variabel `CustomerID` sedangkan variabel `CustomerID` seharusnya bertipe data string. Akan tetapi, variabel `CustomerID` tidak akan digunakan dalam proses analisis data, sehingga tidak perlu diubah tipe datanya.
 
-![alt text](images/image-1.png)
+![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/10045498e3d2bbc8450a29d6e78e40e596f32681/images/image-1.png)
 
 Dari `describe()` dapat diketahui informasi sebagai berikut:
 
@@ -72,7 +72,7 @@ Dengan min, max, median, dan mean dari setiap kolom dapat diketahui tidak ada ni
 
 ### Univariate Analysis
 
-![alt text](images/image.png)
+![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/10045498e3d2bbc8450a29d6e78e40e596f32681/images/image-1.png)
 
 Dari hasil analisis univariate pada categorical features di atas, dapat diamati bahwa:
 
@@ -80,7 +80,7 @@ Dari hasil analisis univariate pada categorical features di atas, dapat diamati 
 - Pada countplot dari variabel `Subscription Type`, terlihat bahwa sebaran pelanggan relatif merata pada masing-masing tipe subscription.
 - Pada countplot dari variabel `Contract Length`, terlihat bahwa pelanggan lebih banyak yang memiliki kontrak tahunan dan triwulanan dibandingkan dengan kontrak bulanan.
 
-![alt text](images/image-3.png)
+![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/10045498e3d2bbc8450a29d6e78e40e596f32681/images/image-3.png)
 
 Dari hasil analisis univariate pada numerical features di atas, dapat diamati bahwa:
 
@@ -95,7 +95,7 @@ Dari hasil analisis univariate pada numerical features di atas, dapat diamati ba
 
 Pada analisis multivariate, akan dilakukan analisis korelasi antar variabel pada dataset. Hal ini dilakukan untuk mengetahui korelasi antar variabel pada dataset sehingga dapat diketahui variabel mana saja yang memiliki korelasi tinggi dengan label churn.
 
-![alt text](images/image-4.png)
+![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/10045498e3d2bbc8450a29d6e78e40e596f32681/images/image-4.png)
 
 Dari diagram heatmap korelasi di atas, dapat diamati bahwa:
 
@@ -132,6 +132,7 @@ Pada proyek ini, akan digunakan model machine learning tensorflow dengan arsitek
   [^2^]: [Sofia, R. N., & Supriyadi, D. (2021). Komparasi Metode Machine Learning dan Deep Learning untuk Deteksi Emosi pada Text di Sosial Media. JUPITER (Jurnal Penelitian Ilmu dan Teknik Komputer), 13(2), 130-139.](https://jurnal.polsri.ac.id/index.php/jupiter/article/view/3603/1677)
 
 Pada proses pelatihan model akan dilakukan hyperparameter tuning dengan Graduate Student Descent (GSD). Hal ini karena GSD merupakan metode yang paling umum digunakan untuk melakukan hyperparameter tuning pada deep learning. Berikut merupakan hyperparameter yang akan di tuning:
+
 - Optimizer: Optimizer mengontrol bagaimana model diperbarui berdasarkan data yang dilihat dan fungsi loss-nya. Pada kasus ini, akan dicoba menggunakan optimizer adam dengan learning rate 0.001 (default), 0.0001, dan 0.01.
 - Jumlah Neuron pada Hidden Layer: Jumlah neuron dalam hidden layer dapat mempengaruhi kapasitas model untuk mempelajari pola dalam data. Terlalu sedikit neuron dapat menyebabkan underfitting, sementara terlalu banyak neuron dapat menyebabkan overfitting. Pada kasus ini, akan dicoba menggunakan 32, 64, 128, 256, 512, dan 1024.
 - Jumlah Hidden Layer: Jumlah hidden layer dalam model deep learning juga dapat mempengaruhi kapasitas model. Model dengan lebih banyak layer dapat mempelajari pola yang lebih kompleks, tetapi juga lebih berisiko overfitting dan membutuhkan lebih banyak data untuk pelatihan. Pada kasus ini, akan dicoba menggunakan 1 sampai 3 hidden layer.
@@ -144,13 +145,13 @@ Selanjutnya, model akan di compile dengan optimizer adam dengan learning rate de
 
 ## Evaluation
 
-Pada tahap ini, model akan dievaluasi dengan menggunakan data testing dan data validation. Evaluasi dilakukan dengan menggunakan metrik accuracy. Accuracy merupakan metrik yang paling umum digunakan untuk mengukur performa model klasifikasi. Accuracy mengukur seberapa sering model membuat prediksi yang benar. Dengan menggunakan metrik accuracy, model akan dievaluasi dengan menggunakan data testing dan data validation. 
+Pada tahap ini, model akan dievaluasi dengan menggunakan data testing dan data validation. Evaluasi dilakukan dengan menggunakan metrik accuracy. Accuracy sendiri merupakan metrik yang paling umum digunakan untuk mengukur performa model klasifikasi. Accuracy mengukur seberapa sering model membuat prediksi label yang benar dari label sebenarnya. Dengan menggunakan metrik accuracy, model akan dievaluasi dengan menggunakan data testing dan data validation.
 
-![alt text](images/image-5.png)
+![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/10045498e3d2bbc8450a29d6e78e40e596f32681/images/image.png)
 
 Dari hasil evaluasi di atas, dapat diamati bahwa:
-- Model memiliki akurasi sebesar 0.92 pada data training, 0.92 pada data testing, dan 0.92 pada data validation.
+
+- Model memiliki akurasi sekitar 0.92 pada data training, 0.92 pada data testing, dan 0.92 pada data validation.
 - Model memiliki akurasi yang konsisten pada data training, data testing, dan data validation sehingga model dapat dikatakan goodfit. Hal ini menunjukkan bahwa model tidak overfitting atau underfitting. Overfitting sendiri terjadi ketika model memiliki perbedaan accuracy yang besar antara data training dan data testing atau antara data testing dan data validation. Sedangkan underfitting terjadi ketika model memiliki accuracy yang rendah pada data training, data testing, dan data validation.
 - Model memiliki performa yang sangat baik dalam memprediksi churn pelanggan dengan akurasi di atas 90%.
 - Dengan menggunakan model ini, perusahaan dapat mengidentifikasi pelanggan yang berisiko churn dan mengambil tindakan proaktif untuk mempertahankan mereka.
-
