@@ -55,11 +55,139 @@ Dari Gambar 1 didapatkan informasi bahwa:
 - Terdapat 8 kolom bertipe data `float` yaitu `CustomerID`, `Age`, `Tenure`, `Usage Frequency`, `Support Calls`, `Payment Delay`, `Total Spend`, `Last Interaction`, dan `Churn`.
 - Terdapat 2 variabel yang bertipe data tidak sesuai, yaitu `Churn` dan `CustomerID`. Variabel `Churn` seharusnya bertipe data _boolean_ atau dapat juga _integer_ karena _true_/_false_ akan diwakilkan oleh 1/0, sedangkan variabel `CustomerID` sedangkan variabel `CustomerID` seharusnya bertipe data string. Akan tetapi, variabel `CustomerID` tidak akan digunakan dalam proses analisis data, sehingga tidak perlu diubah tipe datanya.
 
-![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/main/images/image-1.png)
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-Gambar 2. Statistik Deskriptif Customer _Churn_
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-Dari Gambar 2, dapat diketahui informasi sebagai berikut:
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CustomerID</th>
+      <th>Age</th>
+      <th>Tenure</th>
+      <th>Usage Frequency</th>
+      <th>Support Calls</th>
+      <th>Payment Delay</th>
+      <th>Total Spend</th>
+      <th>Last Interaction</th>
+      <th>Churn</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>505206.000000</td>
+      <td>505206.000000</td>
+      <td>505206.000000</td>
+      <td>505206.000000</td>
+      <td>505206.000000</td>
+      <td>505206.000000</td>
+      <td>505206.000000</td>
+      <td>505206.000000</td>
+      <td>505206.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>200779.451782</td>
+      <td>39.704172</td>
+      <td>31.350435</td>
+      <td>15.714825</td>
+      <td>3.833317</td>
+      <td>13.496843</td>
+      <td>620.072766</td>
+      <td>14.610581</td>
+      <td>0.555203</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>137241.343095</td>
+      <td>12.670577</td>
+      <td>17.237482</td>
+      <td>8.619323</td>
+      <td>3.133603</td>
+      <td>8.451187</td>
+      <td>245.319256</td>
+      <td>8.608286</td>
+      <td>0.496944</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>18.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>100.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>63827.250000</td>
+      <td>29.000000</td>
+      <td>16.000000</td>
+      <td>8.000000</td>
+      <td>1.000000</td>
+      <td>6.000000</td>
+      <td>446.000000</td>
+      <td>7.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>193039.500000</td>
+      <td>40.000000</td>
+      <td>32.000000</td>
+      <td>16.000000</td>
+      <td>3.000000</td>
+      <td>13.000000</td>
+      <td>648.900000</td>
+      <td>14.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>321645.750000</td>
+      <td>49.000000</td>
+      <td>46.000000</td>
+      <td>23.000000</td>
+      <td>6.000000</td>
+      <td>20.000000</td>
+      <td>824.000000</td>
+      <td>22.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>449999.000000</td>
+      <td>65.000000</td>
+      <td>60.000000</td>
+      <td>30.000000</td>
+      <td>10.000000</td>
+      <td>30.000000</td>
+      <td>1000.000000</td>
+      <td>30.000000</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+Tabel 1. Statistik Deskriptif Customer _Churn_
+
+Dari Tabel 1, dapat diketahui informasi sebagai berikut:
 
 - `Count`: Jumlah data pada setiap kolom.
 - `Mean`: Rata-rata dari setiap kolom.
@@ -76,9 +204,9 @@ Dengan _min_, _max_, median, dan mean dari setiap kolom dapat diketahui tidak ad
 
 ![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/main/images/image.png)
 
-Gambar 3. Univariate Analysis _Customer Churn_
+Gambar 2. Univariate Analysis _Customer Churn_
 
-Dari Gambar 3 hasil analisis _univariate_ pada _categorical features_ di atas, dapat diamati bahwa:
+Dari Gambar 2 hasil analisis _univariate_ pada _categorical features_ di atas, dapat diamati bahwa:
 
 - Pada _countplot_ dari variabel `Gender`, terlihat bahwa jumlah pelanggan laki-laki lebih banyak dibandingkan dengan pelanggan perempuan.
 - Pada _countplot_ dari variabel `Subscription Type`, terlihat bahwa sebaran pelanggan relatif merata pada masing-masing tipe _subscription_.
@@ -101,9 +229,9 @@ Pada analisis _multivariate_, akan dilakukan analisis korelasi antar variabel pa
 
 ![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/main/images/image-4.png)
 
-Gambar 4. _Heatmap_ Korelasi _Customer Churn_
+Gambar 3. _Heatmap_ Korelasi _Customer Churn_
 
-Dari Gambar 4 dapat diamati bahwa:
+Dari Gambar 3 dapat diamati bahwa:
 
 - Hanya variabel `Support Calls` yang memiliki korelasi moderat dengan label _churn_.
 - Variabel `Age`, `Payment Delay`, `Last Interaction`,dan `Total Spend` memiliki korelasi rendah dengan label _churn_.
@@ -154,9 +282,9 @@ Pada tahap ini, model akan dievaluasi dengan menggunakan data _testing_ dan data
 
 ![alt text](https://github.com/mausneg/Customer-Churn-Classification/blob/main/images/image-5.png)
 
-Gambar 5. Diagram Plot Evaluasi Model _Customer Churn_
+Gambar 4. Diagram Plot Evaluasi Model _Customer Churn_
 
-Dari Gambar 5, dapat diamati bahwa:
+Dari Gambar 4, dapat diamati bahwa:
 
 - Model memiliki akurasi sekitar 0.92 pada data _training_, 0.92 pada data _testing_, dan 0.92 pada data _validation_.
 - Model memiliki akurasi yang konsisten pada data _training_, data _testing_, dan data _validation_ sehingga model dapat dikatakan _goodfit_. Hal ini menunjukkan bahwa model tidak _overfitting_ atau _underfitting_. _Overfitting_ sendiri terjadi ketika model memiliki perbedaan _accuracy_ yang besar antara data _training_ dan data _testing_ atau antara data _testing_ dan data _validation_. Sedangkan _underfitting_ terjadi ketika model memiliki _accuracy_ yang rendah pada data _training_, data _testing_, dan data _validation_.
