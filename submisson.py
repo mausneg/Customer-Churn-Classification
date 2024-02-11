@@ -11,15 +11,16 @@ df_churn = pd.read_csv('data\customer_churn_dataset-training-master.csv')
 df_churn = pd.concat([df_churn, pd.read_csv('data\customer_churn_dataset-testing-master.csv')], ignore_index=True)
 df_churn.dropna(inplace=True)
 df_churn.reset_index(drop=True, inplace=True)
+df_churn['Churn'] = df_churn['Churn'].astype('int')
 
-df_churn.drop(columns=['CustomerID','Last Interaction','Tenure','Usage Frequency'],inplace=True)
+df_churn.drop(columns=['CustomerID'],inplace=True)
 
 encoder = LabelEncoder()
 df_churn['Gender'] = encoder.fit_transform(df_churn['Gender'])
 
 encoder = OneHotEncoder(sparse_output=False)
 columns_to_encode = ['Subscription Type','Contract Length']
-encoded_df = pd.DataFrame(encoder.fit_transform(df_churn[columns_to_encode]), columns=encoder.get_feature_names_out(columns_to_encode))
+encoded_df = pd.DataFrame(encoder.fit_transform(df_churn[columns_to_encode]), columns=encoder.get_feature_names_out(columns_to_encode)).astype(int)
 df_churn.drop(columns_to_encode, axis=1, inplace=True)
 df_churn = pd.concat([df_churn, encoded_df], axis=1)
 
