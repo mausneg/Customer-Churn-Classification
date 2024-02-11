@@ -83,6 +83,7 @@ Dari hasil analisis univariate pada categorical features di atas, dapat diamati 
 ![alt text](images/image-3.png)
 
 Dari hasil analisis univariate pada numerical features di atas, dapat diamati bahwa:
+
 - Pada histogram dari variabel `Age`, terlihat bahwa sebagian besar pelanggan berusia antara 20-50 tahun.
 - Pada histogram dari variabel `Tenure` dan `Usage Frequency`, terlihat bahwa sebaran pelanggan relatif merata.
 - Pada histogram dari variabel `Support Calls` terlihat bahwa sebagian besar pelanggan melakukan panggilan dukungan kurang dari 5 kali.
@@ -97,6 +98,7 @@ Pada analisis multivariate, akan dilakukan analisis korelasi antar variabel pada
 ![alt text](images/image-4.png)
 
 Dari diagram heatmap korelasi di atas, dapat diamati bahwa:
+
 - Hanya variabel `Support Calls` yang memiliki korelasi moderat dengan label churn.
 - Variabel `Age`, `Payment Delay`, `Last Interaction`,dan `Total Spend` memiliki korelasi rendah dengan label churn.
 - Sedangkan variabel `Tenure` dan `Usage Frequency` memiliki korelasi mendekati nol dengan label churn.
@@ -107,23 +109,38 @@ Pada kasus kali ini, karena model yang akan digunakan adalah deep learning, maka
 
 Pada tahap ini, perlu dilakukan beberapa proses untuk mempersiapkan data sebelum dilakukan pemodelan. Proses-proses tersebut antara lain:
 
-- Melakukan pengecekan terhadap tipe data dari setiap kolom pada dataset. Hal ini dilakukan untuk memastikan bahwa tipe data dari setiap kolom sudah sesuai dengan yang diharapkan.
-- Melakukan pengecekan terhadap missing value pada dataset. Hal ini dilakukan untuk memastikan bahwa tidak ada missing value pada dataset.
-- Melakukan pengecekan terhadap duplikasi data pada dataset. Hal ini dilakukan untuk memastikan bahwa tidak ada duplikasi data pada dataset.
-- Melakukan pengecekan terhadap outlier pada dataset dengan menggunakan describe statistics. Hal ini dilakukan untuk memastikan bahwa tidak ada outlier pada dataset sehingga tidak mempengaruhi hasil dari model machine learning yang akan dibuat.
-- Mengatasi missing value pada dataset. Hal ini dilakukan dengan cara mengisi missing value dengan nilai yang sesuai atau menghapus baris yang memiliki missing value karena jumlah missing value yang sedikit.
-- Melakukan pengecekan terhadap korelasi antar variabel pada dataset. Hal ini dilakukan untuk mengetahui korelasi antar variabel pada dataset sehingga dapat diketahui variabel mana saja yang memiliki korelasi tinggi dengan label churn.
-- Menghapus kolom yang tidak diperlukan dan yang memiliki korelasi sangat rendah dengan label churn. Hal ini dilakukan untuk mempercepat proses pemodelan dan mengurangi kompleksitas model.
-- Melakukan encoding terhadap kolom-kolom kategorikal pada dataset. Hal ini dilakukan untuk mengubah tipe data dari kolom-kolom kategorikal menjadi numerik sehingga dapat digunakan pada model machine learning.
-- Melakukan split data menjadi data train, test, dan validation. Hal ini dilakukan untuk membagi data menjadi data train, test, dan validation dengan proporsi tertentu sehingga dapat digunakan untuk melatih model, menguji model, dan mengevaluasi model.
+### Menghapus Kolom yang Tidak Diperlukan
+
+Pada tahap ini, kolom `CustomerID` dihapus karena tidak diperlukan dalam proses pemodelan.
+
+### Encoding Variabel Kategorikal
+
+Pada fitur `Gender` female diubah menjadi 0 dan male diubah menjadi 1, sedangkan pada fitur `Subscription Type` dan `Contract Length` dilakukan one-hot encoding.
+
+### Splitting Data
+
+Dataset akan dibagi menjadi data training, data testing, dan data validation. Dengan ukuran data training sebesar 80%, data testing sebesar 10%, dan data validation sebesar 10%. Masing-masing ukuran ini dipertimbangkan dengan ukuran dataset yang ada. Sehingga didapatkan hasil bahwa data training sebesar 404164, data testing sebesar 50521, dan data validation sebesar 50521. Dengan ukuran 50521 pada data testing dan data validation, merupakan ukuran yang cukup besar untuk melakukan evaluasi model.
 
 ## Modeling
 
-Pada proyek ini, akan digunakan model machine learning tensorflow dengan arsitektur deep learning. Hal ini karena deep learning mampu mempelajari pola yang kompleks dari data dan menghasilkan prediksi yang akurat. Model ini terdiri dari 1024 neuron, layer kedua terdiri dari 512 neuron, dan layer terakhir terdiri dari 1 neuron. Model ini menggunakan fungsi aktivasi relu pada layer pertama dan kedua, karena relu merupakan fungsi aktivasi yang paling umum digunakan pada hidden layer. Sedangkan pada layer terakhir menggunakan fungsi aktivasi sigmoid, karena sigmoid merupakan fungsi aktivasi yang paling umum digunakan pada output layer untuk klasifikasi biner.
+Pada proyek ini, akan digunakan model machine learning tensorflow dengan arsitektur deep learning. Hal ini karena beberapa alasan, antara lain:
 
-Selanjutnya, model akan di compile dengan optimizer adam, loss function binary crossentropy, dan metrics accuracy. Optimizer adam merupakan optimizer yang paling umum digunakan pada deep learning karena dapat melakukan penyesuaian learning rate secara otomatis. Loss function binary crossentropy merupakan loss function yang paling umum digunakan pada klasifikasi biner. Metrics accuracy digunakan untuk mengukur performa model.
+- Kemampuan untuk menangkap pola yang kompleks: Deep learning mampu mempelajari pola yang sangat kompleks dalam data. Ini berarti bahwa jika ada hubungan non-linear atau interaksi antara fitur dalam dataset, model deep learning mungkin mampu menangkapnya.
+- Kemampuan untuk menangani data berdimensi tinggi: Karena pada kasus ini memiliki sekitar 14 fitur sehingga model deep learning dapat mengelola kompleksitas ini.
+- Pemilihan fitur otomatis: Deep learning dapat mempelajari fitur-fitur penting secara otomatis selama proses pelatihan karena pada kasus ini banyak fitur yang tidak memiliki korelasi yang tinggi dengan label churn.
+- Performa: Dalam banyak kasus, deep learning telah menunjukkan performa yang sangat baik dalam berbagai tugas prediksi, sering kali melebihi model lain seperti regresi logistik atau random forest [^2^].
+  [^2^]: [Sofia, R. N., & Supriyadi, D. (2021). Komparasi Metode Machine Learning dan Deep Learning untuk Deteksi Emosi pada Text di Sosial Media. JUPITER (Jurnal Penelitian Ilmu dan Teknik Komputer), 13(2), 130-139.](https://jurnal.polsri.ac.id/index.php/jupiter/article/view/3603/1677)
 
-Proses hyperparameter tuning akan dilakukan dengan menggunakan intuisi dan eksperimen. Hal ini dilakukan untuk mencari hyperparameter yang paling optimal sehingga dapat menghasilkan model yang akurat. Beberapa hyperparameter yang akan di tuning antara lain optimizer, jumlah neuron pada hidden layer, jumlah hidden layer, epoch, dan batch size.
+Pada proses pelatihan model akan dilakukan hyperparameter tuning dengan Graduate Student Descent (GSD). Hal ini karena GSD merupakan metode yang paling umum digunakan untuk melakukan hyperparameter tuning pada deep learning. Berikut merupakan hyperparameter yang akan di tuning:
+- Optimizer: Optimizer mengontrol bagaimana model diperbarui berdasarkan data yang dilihat dan fungsi loss-nya. Pada kasus ini, akan dicoba menggunakan optimizer adam dengan learning rate 0.001 (default), 0.0001, dan 0.01.
+- Jumlah Neuron pada Hidden Layer: Jumlah neuron dalam hidden layer dapat mempengaruhi kapasitas model untuk mempelajari pola dalam data. Terlalu sedikit neuron dapat menyebabkan underfitting, sementara terlalu banyak neuron dapat menyebabkan overfitting. Pada kasus ini, akan dicoba menggunakan 32, 64, 128, 256, 512, dan 1024.
+- Jumlah Hidden Layer: Jumlah hidden layer dalam model deep learning juga dapat mempengaruhi kapasitas model. Model dengan lebih banyak layer dapat mempelajari pola yang lebih kompleks, tetapi juga lebih berisiko overfitting dan membutuhkan lebih banyak data untuk pelatihan. Pada kasus ini, akan dicoba menggunakan 1 sampai 3 hidden layer.
+- Epoch: Epoch adalah jumlah kali seluruh dataset melalui jaringan neural selama pelatihan. Pada kasus ini, akan dicoba menggunakan 10 dan 20 epoch saja.
+- Batch Size: Batch size adalah jumlah sampel yang diproses sebelum model diperbarui. Batch size yang lebih kecil dapat menghasilkan pembaruan yang lebih sering, tetapi juga dapat menyebabkan noise dalam pembaruan tersebut. Pada kasus ini, akan dicoba menggunakan batch size 128, 256, 512, dan 1024.
+
+Dari proses tuning maka didapatkan model yang terbaik terdiri dari 1024 neuron, layer kedua terdiri dari 512 neuron, dan layer terakhir terdiri dari 1 neuron. Model ini menggunakan fungsi aktivasi relu pada layer pertama dan kedua, karena relu merupakan fungsi aktivasi yang paling umum digunakan pada hidden layer. Sedangkan pada layer terakhir menggunakan fungsi aktivasi sigmoid, karena sigmoid merupakan fungsi aktivasi yang paling umum digunakan pada output layer untuk klasifikasi biner.
+
+Selanjutnya, model akan di compile dengan optimizer adam dengan learning rate default (0.001), loss function binary crossentropy, dan metrics accuracy. Optimizer adam merupakan optimizer yang paling umum digunakan pada deep learning karena dapat melakukan penyesuaian learning rate secara otomatis. Loss function binary crossentropy merupakan loss function yang paling umum digunakan pada klasifikasi biner. Metrics accuracy digunakan untuk mengukur performa model.
 
 ## Evaluation
 
