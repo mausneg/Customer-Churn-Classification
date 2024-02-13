@@ -4,25 +4,31 @@
 
 _Customer churn_ merujuk pada fenomena di mana pelanggan menghentikan hubungan atau langganan mereka dengan perusahaan atau penyedia layanan. Tingkat _churn_ pelanggan berdampak langsung pada pendapatan, pertumbuhan, dan retensi pelanggan perusahaan. Oleh karena itu, memahami dan mengurangi _churn_ pelanggan adalah prioritas utama bagi banyak bisnis
 
-Misalnya, dalam industri telekomunikasi, pelanggan mungkin memilih untuk berhenti berlangganan jika mereka merasa tidak puas dengan kualitas layanan, menemukan penawaran yang lebih baik dari pesaing, atau merasa bahwa biaya langganan mereka tidak sebanding dengan nilai yang mereka terima. Dalam kasus seperti ini, perusahaan dapat kehilangan pendapatan signifikan dan mungkin harus mengeluarkan biaya tambahan untuk memperoleh pelanggan baru.
+Sebagai contoh kasus PT Indonusa Telemedia atau dikenal dengan namaTelkomvision (selanjutnya disebut Transvision)mempunyai bisnis utamanya adalah TV berlangganan.Menurunnya pendapatan per pelanggan TV berlanggananatau average revenue per user (ARPU) menjadi penyebab perusahaan ini mengalami kerugian. Banyaknya pelanggan yang menunggakmembayar tagihan kemudian putus berlangganan ( churn )menyebabkan tingkat churn tinggi. Tingkat churn pelanggan yang tinggi harus diprediksi secara akurat,karena hasil prediksi yang akurat dapat menentukanstrategi apa dan promosi bagaimana yang tepat untukretensi pelanggan [^1^].
 
-Dengan melakukan analisis prediksi _churn_, perusahaan dapat mengidentifikasi pelanggan yang berisiko _churn_ dan mengambil tindakan proaktif untuk mempertahankan mereka. Misalnya, mereka mungkin menawarkan diskon atau peningkatan layanan untuk meningkatkan kepuasan pelanggan dan mencegah mereka berhenti berlangganan. Oleh karena itu, analisis prediksi _churn_ adalah alat yang sangat berharga untuk mempertahankan pelanggan dan meningkatkan kinerja bisnis [^1^].
+Dengan melakukan analisis prediksi _churn_, perusahaan dapat mengidentifikasi pelanggan yang berisiko _churn_ dan mengambil tindakan proaktif untuk mempertahankan mereka. Misalnya, mereka mungkin menawarkan diskon atau peningkatan layanan untuk meningkatkan kepuasan pelanggan dan mencegah mereka berhenti berlangganan. Oleh karena itu, analisis prediksi _churn_ adalah alat yang sangat berharga untuk mempertahankan pelanggan dan meningkatkan kinerja bisnis [^2^].
 
 ## Business Understanding
 
+Tingginya tingkat churn pelanggan dapat memiliki dampak signifikan terhadap pendapatan dan pertumbuhan perusahaan, dan berikut adalah beberapa alasan mengapa:
+
+- Pendapatan yang Hilang: Pelanggan yang churn berarti pendapatan yang hilang. Setiap pelanggan yang pergi adalah pendapatan berulang yang tidak akan pernah diterima oleh perusahaan. Jika tingkat churn tinggi, ini bisa berarti kehilangan pendapatan yang signifikan.
+- Biaya Akuisisi Pelanggan (CAC): Biaya untuk mendapatkan pelanggan baru seringkali jauh lebih tinggi daripada biaya untuk mempertahankan pelanggan yang ada. Jadi, ketika pelanggan churn, perusahaan harus menghabiskan lebih banyak uang untuk menggantikan mereka dengan pelanggan baru.
+- Reputasi dan Referensi: Pelanggan yang churn mungkin meninggalkan ulasan negatif atau berbicara buruk tentang perusahaan kepada orang lain, yang dapat merusak reputasi perusahaan dan membuat lebih sulit untuk mendapatkan pelanggan baru.
+
+Dari alasan-alasan di atas, dapat ditarik _problem statements_ dan _goals_ sebagai berikut:
+
 ### Problem Statements
 
-- Perusahaan mengalami tingkat _churn_ pelanggan yang tinggi, yang berdampak negatif pada pendapatan dan pertumbuhan mereka.
-- Perusahaan saat ini tidak memiliki cara untuk mengidentifikasi pelanggan yang berisiko _churn_.
-- Tanpa kemampuan untuk memprediksi _churn_, perusahaan tidak dapat mengambil tindakan proaktif untuk mempertahankan pelanggan.
+1. Bagaimana perusahaan dapat mengurangi tingkat _churn_ pelanggan yang tinggi yang berdampak negatif pada pendapatan dan pertumbuhan mereka?
+2. Apakah perusahaan memiliki cara untuk mengidentifikasi fitur-fitur yang paling berkontribusi terhadap _churn_ pelanggan?
+3. Bagaimana perusahaan dapat mengidentifikasi pelanggan yang berisiko _churn_ dan mengambil tindakan proaktif untuk mempertahankan mereka?
 
 ### Goals
 
-- Membangun model prediktif yang dapat memprediksi _churn_ pelanggan dengan akurasi di atas 85%.
-- Mengidentifikasi fitur-fitur yang paling berkontribusi terhadap _churn_ pelanggan.
-- Menggunakan model untuk mengidentifikasi pelanggan yang berisiko _churn_.
-- Mengambil tindakan proaktif berdasarkan prediksi model untuk mempertahankan pelanggan dan mengurangi _churn_.
-- Meningkatkan retensi pelanggan dan, pada akhirnya, pendapatan dan pertumbuhan perusahaan.
+1. Membangun model prediktif yang dapat memprediksi _churn_ pelanggan dengan akurasi di atas 85% untuk membantu mengurangi tingkat _churn_.
+2. Mengidentifikasi fitur-fitur yang paling berkontribusi terhadap _churn_ pelanggan sehingga perusahaan dapat lebih memahami faktor-faktor yang berkontribusi terhadap _churn_.
+3. Menggunakan model untuk mengidentifikasi pelanggan yang berisiko _churn_ dan mengambil tindakan proaktif berdasarkan prediksi model untuk mempertahankan pelanggan dan mengurangi _churn_.
 
 ## Data Understanding
 
@@ -308,7 +314,7 @@ Dari Gambar 3 dapat diamati bahwa:
 - Variabel `Age`, `Payment Delay`, `Last Interaction`,dan `Total Spend` memiliki korelasi rendah dengan label _churn_.
 - Sedangkan variabel `Tenure` dan `Usage Frequency` memiliki korelasi mendekati nol dengan label _churn_.
 
-Dari hasil analisis _multivariate_ di atas, didapatkan informasi bahwa variabel `Support Calls` merupakan variabel yang paling berkontribusi terhadap label _churn_. Sedangkan variabel `Age`, `Payment Delay`, `Last Interaction`, dan `Total Spend` memiliki kontribusi yang rendah terhadap label _churn_. Sedangkan variabel `Tenure` dan `Usage Frequency` hampir tidak memiliki kontribusi terhadap label _churn_. Oleh karena itu, `Tenure` dan `Usage Frequency` tidak akan digunakan dalam proses pemodelan.
+Dari hasil analisis _multivariate_ di atas, didapatkan informasi bahwa variabel `Support Calls` merupakan variabel yang paling berkontribusi terhadap label _churn_. Sedangkan variabel `Age`, `Payment Delay`, `Last Interaction`, dan `Total Spend` memiliki kontribusi yang rendah terhadap label _churn_. Sedangkan variabel `Tenure` dan `Usage Frequency` hampir tidak memiliki kontribusi terhadap label _churn_
 
 ## Data Preparation
 
@@ -316,11 +322,11 @@ Pada tahap ini, perlu dilakukan beberapa proses untuk mempersiapkan data sebelum
 
 ### Menghapus Kolom yang Tidak Diperlukan
 
-Pada tahap ini, kolom `CustomerID` dihapus karena tidak diperlukan dalam proses pemodelan.
+Pada tahap ini, kolom `CustomerID` dihapus karena tidak diperlukan dalam proses pemodelan. Kolom ini hanya berisi ID unik untuk setiap pelanggan dan tidak memiliki kontribusi terhadap label _churn_.
 
 ### Encoding Variabel Kategorikal
 
-Pada fitur `Gender` _female_ diubah menjadi 0 dan _male_ diubah menjadi 1, sedangkan pada fitur `Subscription Type` dan `Contract Length` dilakukan _one-hot encoding_.
+Pada tahap ini, variabel kategorikal `Gender`, `Subscription Type`, dan `Contract Length` diubah menjadi bentuk numerik. Hal ini dilakukan karena model _machine learning_ hanya dapat memproses data numerik. Sehingga, perlu dilakukan _encoding_ pada variabel kategorikal tersebut. Pada fitur `Gender` _female_ diubah menjadi 0 dan _male_ diubah menjadi 1, sedangkan pada fitur `Subscription Type` dan `Contract Length` dilakukan _one-hot encoding_.
 
 ### Splitting Data
 
@@ -333,7 +339,7 @@ Pada proyek ini, akan digunakan model _machine learning_ tensorflow dengan arsit
 - Kemampuan untuk menangkap pola yang kompleks: _Deep learning_ mampu mempelajari pola yang sangat kompleks dalam data. Ini berarti bahwa jika ada hubungan non-_linear_ atau interaksi antara fitur dalam _dataset_, model _deep learning_ mungkin mampu menangkapnya.
 - Kemampuan untuk menangani data berdimensi tinggi: Karena pada kasus ini memiliki sekitar 14 fitur sehingga model _deep learning_ dapat mengelola kompleksitas ini.
 - Pemilihan fitur otomatis: _Deep learning_ dapat mempelajari fitur-fitur penting secara otomatis selama proses pelatihan karena pada kasus ini banyak fitur yang tidak memiliki korelasi yang tinggi dengan label _churn_.
-- Performa: Dalam banyak kasus, _deep learning_ telah menunjukkan performa yang sangat baik dalam berbagai tugas prediksi, sering kali melebihi model lain seperti _regresi logistik_ atau _random forest_ [^2^].
+- Performa: Dalam banyak kasus, _deep learning_ telah menunjukkan performa yang sangat baik dalam berbagai tugas prediksi, sering kali melebihi model lain seperti _regresi logistik_ atau _random forest_ [^3^].
 
 Pada proses pelatihan model akan dilakukan _hyperparameter tuning_ dengan _Graduate Student Descent_ (GSD). Hal ini karena GSD merupakan metode yang paling umum digunakan untuk melakukan _hyperparameter tuning_ pada _deep learning_. Berikut merupakan _hyperparameter_ yang akan di _tuning_:
 
@@ -357,7 +363,7 @@ Gambar 4. Diagram Plot Evaluasi Model _Customer Churn_
 
 Dari Gambar 4, dapat diamati bahwa:
 
-- Model memiliki akurasi sekitar 0.92 pada data _training_, 0.92 pada data _testing_, dan 0.91 pada data _validation_.
+- Model memiliki akurasi sekitar 0.92 pada data _training_, 0.92 pada data _testing_, dan 0.92 pada data _validation_.
 - Model memiliki akurasi yang konsisten pada data _training_, data _testing_, dan data _validation_ sehingga model dapat dikatakan _goodfit_. Hal ini menunjukkan bahwa model tidak _overfitting_ atau _underfitting_. _Overfitting_ sendiri terjadi ketika model memiliki perbedaan _accuracy_ yang besar antara data _training_ dan data _testing_ atau antara data _testing_ dan data _validation_. Sedangkan _underfitting_ terjadi ketika model memiliki _accuracy_ yang rendah pada data _training_, data _testing_, dan data _validation_.
 - Model memiliki performa yang sangat baik dalam memprediksi _churn_ pelanggan dengan akurasi di atas 85%.
 - Dengan menggunakan model ini, perusahaan dapat mengidentifikasi pelanggan yang berisiko _churn_ dan mengambil tindakan proaktif untuk mempertahankan mereka. Misalnya, mereka mungkin menawarkan diskon, peningkatan layanan, atau komunikasi pribadi untuk meningkatkan kepuasan dan loyalitas pelanggan.
@@ -365,5 +371,6 @@ Dari Gambar 4, dapat diamati bahwa:
 
 ## References
 
-[^1^]: [Ahmadi, T., Wulandari, A., & Suhatman, H. Sistem Customer Churn Prediction Menggunakan Machine Learning pada Perusahaan ISP.](https://repository.pnj.ac.id/id/eprint/14345/3/JURNAL.pdf)
-[^2^]: [Sofia, R. N., & Supriyadi, D. (2021). Komparasi Metode Machine Learning dan Deep Learning untuk Deteksi Emosi pada Text di Sosial Media. JUPITER (Jurnal Penelitian Ilmu dan Teknik Komputer), 13(2), 130-139.](https://jurnal.polsri.ac.id/index.php/jupiter/article/view/3603/1677)
+[^1^]: [Suryana, Nana, PREDIKSI CHURN DAN SEGMENTASI PELANGGAN TV BERLANGGANAN (STUDI KASUS TRANSVISIONJAWA BARAT)](https://www.academia.edu/33269763/PREDIKSI_CHURN_DAN_SEGMENTASI_PELANGGAN_TV_BERLANGGANAN_STUDI_KASUS_TRANSVISION_JAWA_BARAT)
+[^2^]: [Ahmadi, T., Wulandari, A., & Suhatman, H. Sistem Customer Churn Prediction Menggunakan Machine Learning pada Perusahaan ISP.](https://repository.pnj.ac.id/id/eprint/14345/3/JURNAL.pdf)
+[^3^]: [Sofia, R. N., & Supriyadi, D. (2021). Komparasi Metode Machine Learning dan Deep Learning untuk Deteksi Emosi pada Text di Sosial Media. JUPITER (Jurnal Penelitian Ilmu dan Teknik Komputer), 13(2), 130-139.](https://jurnal.polsri.ac.id/index.php/jupiter/article/view/3603/1677)
